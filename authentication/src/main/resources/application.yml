@@ -16,7 +16,8 @@ server:
 spring:
   application:
     name: authentication
-
+  datasource:
+    driver-class-name: org.h2.Driver
 
 eureka:
   client:
