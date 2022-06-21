@@ -9,12 +9,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MyUserDetailsService implements UserDetailsService {
+public class DatabaseUserDetailsService implements UserDetailsService {
 
     @Autowired
     RestTemplate restTemplate;
@@ -25,17 +24,22 @@ public class MyUserDetailsService implements UserDetailsService {
 
         if (user != null) {
             org.springframework.security.core.userdetails.User.UserBuilder builder;
-            builder = org.springframework.security.core.userdetails.User.withUsername(username);
+            builder = org.springframework.security.core.userdetails.User.withUsername(user.getUserName());
             builder.password(new BCryptPasswordEncoder().encode(user.getPassword()));
 
             List<String> roles = new ArrayList<String>();
 
-            roles.add("app");
+            roles.add("app-user");
 
             for (UserRole role : user.getUserRoles())
                 roles.add(role.getRoleName());
 
-            builder.roles(roles.toArray(new String[0]));
+            String[] roleArray = new String[roles.size()];
+
+            for (int i = 0; i < roles.size(); i++)
+                roleArray[i] = roles.get(i);
+
+            builder.roles(roleArray);
 
             return builder.build();
         }

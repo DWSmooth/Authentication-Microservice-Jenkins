@@ -3,11 +3,7 @@ logging:
     root: INFO
     org.springframework.web: INFO
     org.springframework.security: INFO
-#    org.springframework.boot.autoconfigure: DEBUG
-
-jwt:
-  private.key: classpath:app.key
-  public.key: classpath:app.pub
+    org.springframework.security.oauth2: INFO
 
 server:
   port:
@@ -23,4 +19,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-    #enabled: false
