@@ -99,6 +99,7 @@ public class OAuth2AuthorizationServerConfig {
                 /*
                 // tokenRevocationEndpoint(): The configurer for the OAuth2 Token Revocation endpoint.
                 .tokenRevocationEndpoint(tokenRevocationEndpoint -> { })
+                */
 
                 /*
                 // OpenID Connect 1.0 configuration
@@ -129,7 +130,7 @@ public class OAuth2AuthorizationServerConfig {
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
-                .clientId("client-a")
+                .clientId("client")
                 .clientSecret("{noop}secret")
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
