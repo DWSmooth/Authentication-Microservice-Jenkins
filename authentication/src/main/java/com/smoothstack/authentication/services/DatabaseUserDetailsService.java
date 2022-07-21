@@ -12,9 +12,9 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
 @Service
 public class DatabaseUserDetailsService implements UserDetailsService {
-
     @Autowired
     RestTemplate restTemplate;
 
@@ -47,3 +47,5 @@ public class DatabaseUserDetailsService implements UserDetailsService {
         throw new UsernameNotFoundException("User not found");
     }
 }
+
+ */

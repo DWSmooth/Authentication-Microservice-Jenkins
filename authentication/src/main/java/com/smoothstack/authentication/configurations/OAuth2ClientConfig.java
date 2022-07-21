@@ -23,7 +23,6 @@ public class OAuth2ClientConfig {
 
         return http.build();
     }
-    */
 
     @Bean
     public OAuth2AuthorizedClientManager authorizedClientManager(
@@ -50,5 +49,6 @@ public class OAuth2ClientConfig {
     public OAuth2AuthorizedClientRepository authorizedClientRepository() {
         return new HttpSessionOAuth2AuthorizedClientRepository();
     }
+     */
 
 }

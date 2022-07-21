@@ -16,7 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class OAuth2LoginConfig {
-
+    /*
     @Bean
     @Order
     public SecurityFilterChain OAuth2LoginSecurityFilterChain(@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection") HttpSecurity http) throws Exception {
@@ -49,4 +49,5 @@ public class OAuth2LoginConfig {
                 .clientName("Google")
                 .build();
     }
+     */
 }
