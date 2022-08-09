@@ -18,9 +18,19 @@ spring:
     name: authentication
   datasource:
     driver-class-name: org.h2.Driver
+  cloud:
+    inetutils:
+      ignored-interfaces:
+        - eth0
+        - eth1
+        - eth2
+        - eth3
+        - lo
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${MEGABYTES_LOCAL_URL}:8761/eureka
+  instance:
+    preferIpAddress: true
     #enabled: false
